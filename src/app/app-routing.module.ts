@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { DefaultUserProfileComponent } from './default-user-profile/default-user-profile.component';
 const routes: Routes = [
-  { path: '',   redirectTo: '/first-component', pathMatch: 'full' }, // redirect to `first-component`
+  { path: '',   component: DefaultUserProfileComponent},
+  { path:'/index.html', component: DefaultUserProfileComponent} // redirect to `first-component`
 ];
 
 @NgModule({
