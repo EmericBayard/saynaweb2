@@ -8,7 +8,6 @@
                             <figure class="avatar ml-0 mb-4 position-relative w100 z-index-1"><img src={{data.picture}} alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
                         </div>
                         <div class="col-xl-4 col-lg-6 pl-xl-5 pb-xl-5 pb-3">
-                            
                             <h4 class="fw-700 font-md text-white mt-3 mb-1">{{data.firstname}} {{data.name}}<i class="ti-check font-xssss btn-round-xs bg-success text-white ml-1"></i></h4>
                             <span class="font-xssss fw-600 text-grey-500 d-inline-block ml-0">{{data.email}}</span>
                             <span class="dot ml-2 mr-2 d-inline-block btn-round-xss bg-grey"></span>
@@ -18,23 +17,18 @@
                                 <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
                                 <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
                                 <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>-->
-                                <li *ngFor="let friend of data.friends"><a href={{friend.url}}><img src={{friend.picture}} alt="user" class="w25 d-inline-block" style="border-radius: 50%; border: solid white;"></a></li>
+                                <li *ngFor="let friend of data.friends"><a href={{friend.url}}><img src={{friend.picture}} alt="user" class="w25 d-inline-block" style="border-radius: 50%; border: solid whitesmoke;"></a></li>
                                 <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 text-center font-xssss ls-3">+{{data.friends.length - 4}}</a></li>
-                                
                             </ul>
                         </div>
                         <div class="col-xl-4 col-lg-6 d-block">
-                            <h2 class="display5-size text-white fw-700 lh-1 mr-3">{{data.xp}} <i class="feather-arrow-up-right text-success font-xl"></i></h2>
-                            <h4 class="text-white font-sm fw-600 mt-0 lh-3">Your learning level points ! </h4>
-
+                            <h2 class="display5-size text-white fw-700 lh-1 mr-3">{{data.xp}}<i class="feather-arrow-up-right text-success font-xl"></i></h2>
+                            <h4 class="text-white font-sm fw-600 mt-0 lh-3">Your learning level points !</h4>
                         </div>
                         <div class="col-xl-3 mt-4">
                             <div id="chart-users-blue3" class="mt-2"></div>
                         </div>
                     </div>
-                             
-                         
-
                 </div>
             </div>
             <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
@@ -60,10 +54,10 @@
                                     <p class="font-xssss fw-600 lh-28 text-grey-500 pl-0">{{data.bio}}</p>
                                     <ul class="d-flex align-items-center mt-2 mb-3 float-left">
                                         <li class="mr-2"><a href={{data.facebook}} class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                        <li class="mr-2"><a href={data.twitter}} class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                        <li class="mr-2"><a href={data.linkedin}} class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                        <li class="mr-2"><a href={data.instagram}} class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                        <li class="mr-2"><a href={data.pinterest}} class="btn-round-md bg-pinterest"><i class="font-xs ti-pinterest text-white"></i></a></li>
+                                        <li class="mr-2"><a href={{data.twitter}} class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
+                                        <li class="mr-2"><a href={{data.linkedin}} class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
+                                        <li class="mr-2"><a href={{data.instagram}} class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
+                                        <li class="mr-2"><a href={{data.pinterest}} class="btn-round-md bg-pinterest"><i class="font-xs ti-pinterest text-white"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -75,137 +69,26 @@
                         <div class="card-body mb-3 pb-0"><h2 class="fw-400 font-lg d-block">My  <b>Courses</b> <a href="#" class="float-right"><i class="feather-edit text-grey-500 font-xs"></i></a></h2></div>
                         <div class="card-body pb-0">
                             <div class="row">
+                                <!-- DYNAMIC -->
                                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
+                                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1" *ngFor="let course of data.mycourses">
                                         <div class="card-image w-100 mb-3">
-                                            <a href="home-3.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
+                                                <a href="home-3.html" class="video-bttn position-relative d-block"><img src={{course.video}} alt="image" class="w-100"></a>
                                         </div>
                                         <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1">Python</span>
-                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> 240</span>
-                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="home-3.html" class="text-dark text-grey-900">Complete Python Bootcamp From Zero to Hero in Python </a></h4>
-                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 32 Lesson </h6>
+                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1">{{course.language}}</span>
+                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss"></span>{{course.price}}$</span>
+                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="home-3.html" class="text-dark text-grey-900">{{course.title}} </a></h4>
+                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> {{course.lessonNumber}} Lesson</h6>
                                             <ul class="memberlist mt-3 mb-2 ml-0 d-block">
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
+                                                <li *ngFor="let friend of data.friends"><a href={{friend.url}}><img src={{friend.picture}} alt="user" class="w25 d-inline-block" style="border-radius: 50%; border: solid whitesmoke;"></a></li>
+                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">{{course.applyStudent.length - 4}}</a></li>
                                                 <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                                        <div class="card-image w-100 mb-3">
-                                            <a href="home-3.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
-                                        </div>
-                                        <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-warning d-inline-block text-warning mr-1">Python</span>
-                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> 670</span>
-                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="home-3.html" class="text-dark text-grey-900">Fundamentals for Scrum Master and Agile Projects </a></h4>
-                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 32 Lesson </h6>
-                                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
-                                                <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                                        <div class="card-image w-100 mb-3">
-                                            <a href="home-3.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
-                                        </div>
-                                        <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Desinger</span>
-                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> 450</span>
-                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="home-3.html" class="text-dark text-grey-900">Complete Python Bootcamp From Zero to Hero in Python </a></h4>
-                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 24 Lesson </h6>
-                                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
-                                                <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                                        <div class="card-image w-100 mb-3">
-                                            <a href="home-3.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
-                                        </div>
-                                        <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Develop</span>
-                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> 370</span>
-                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="home-3.html" class="text-dark text-grey-900">The Data Science Course Complete Data Science </a></h4>
-                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 23 Lesson </h6>
-                                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
-                                                <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                                        <div class="card-image w-100 mb-3">
-                                            <a href="home-3.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
-                                        </div>
-                                        <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mr-1">Bootstrap</span>
-                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> 60</span>
-                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="home-3.html" class="text-dark text-grey-900">Java Programming Masterclass for Developers</a></h4>
-                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 14 Lesson </h6>
-                                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
-                                                <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card w-100 p-0 shadow-xss border-0 rounded-lg overflow-hidden mr-1">
-                                        <div class="card-image w-100 mb-3">
-                                            <a href="home-3.html" class="video-bttn position-relative d-block"><img src="https://via.placeholder.com/400x300.png" alt="image" class="w-100"></a>
-                                        </div>
-                                        <div class="card-body pt-0">
-                                            <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-danger d-inline-block text-danger mr-1">Desinger</span>
-                                            <span class="font-xss fw-700 pl-3 pr-3 ls-2 lh-32 d-inline-block text-success float-right"><span class="font-xsssss">$</span> 40</span>
-                                            <h4 class="fw-700 font-xss mt-3 lh-28 mt-0"><a href="home-3.html" class="text-dark text-grey-900">Complete Python Bootcamp From Zero to Hero in Python </a></h4>
-                                            <h6 class="font-xssss text-grey-500 fw-600 ml-0 mt-2"> 24 Lesson </h6>
-                                            <ul class="memberlist mt-3 mb-2 ml-0 d-block">
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                                <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3 text-center">+2</a></li>
-                                                <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--   DYNAMIC -->
                             </div>  
                         </div>
                     </div>
@@ -215,424 +98,75 @@
                         <div class="card-body mb-3 pb-0"><h2 class="fw-400 font-lg d-block">My <b>Badge</b> <a href="#" class="float-right"><i class="feather-edit text-grey-500 font-xs"></i></a></h2></div>
                         <div class="card-body pb-0">
                             <div class="row">
-                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let badge of data.badges">
                                     <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
                                         <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
                                         <a href="#" class="btn-round-xxxl rounded-lg ml-auto mr-auto">
                                             <img src="https://via.placeholder.com/50x50.png" alt="icon" class="w-100">
                                         </a>
-                                        <h4 class="fw-700 font-xsss mt-4">Bronze User</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome Microsoft Access databases</p>
+                                        <h4 class="fw-700 font-xsss mt-4">{{badge.name}}</h4>
+                                        <p class="fw-500 font-xssss text-grey-500 mt-3">{{badge.explaination}}</p>
                                         <div class="clearfix"></div>
                                         <div class="progress mt-3 h10">
-                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" attr.aria-valuenow={{badge.percentage}} aria-valuemin="0" aria-valuemax="100" style="width: {{badge.percentage}}%"></div>
                                         </div>
-                                        <a href="#" class="mt-3 d-inline-block text-grey-900 fw-700 rounded-lg text-center font-xssss ls-3">UNLOCK</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xsss mt-4">Platinum  User</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome Microsoft Access databases</p>
-                                        <div class="clearfix"></div>
-                                        <div class="progress mt-3 h10">
-                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
-                                        </div>
-                                        <a href="#" class="mt-3 d-inline-block text-grey-500 fw-600 rounded-lg text-center font-xssss ls-3">95 / 100</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xsss mt-4">Ultra Powered</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome Microsoft Access databases</p>
-                                        <div class="clearfix"></div>
-                                        <div class="progress mt-3 h10">
-                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
-                                        </div>
-                                        <a href="#" class="mt-3 d-inline-block text-grey-500 fw-600 rounded-lg text-center font-xssss ls-3">80 / 100</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xsss mt-4">Bronze User</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome Microsoft Access databases</p>
-                                        <div class="clearfix"></div>
-                                        <div class="progress mt-3 h10">
-                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-                                        </div>
-                                        <a href="#" class="mt-3 d-inline-block text-grey-500 fw-600 rounded-lg text-center font-xssss ls-3">75 / 100</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xsss mt-4">Gold User</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome Microsoft Access databases</p>
-                                        <div class="clearfix"></div>
-                                        <div class="progress mt-3 h10">
-                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%"></div>
-                                        </div>
-                                        <a href="#" class="mt-3 d-inline-block text-grey-500 fw-600 rounded-lg text-center font-xssss ls-3">65 / 100</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xsss mt-4">Silver User</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome Microsoft Access databases</p>
-                                        <div class="clearfix"></div>
-                                        <div class="progress mt-3 h10">
-                                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-                                        </div>
-                                        <a href="#" class="mt-3 d-inline-block text-grey-900 fw-700 rounded-lg text-center font-xssss ls-3">UNLOCK</a>
+                                        <a href="#" class="mt-3 d-inline-block text-grey-900 fw-700 rounded-lg text-center font-xssss ls-3" [class.text-grey-900]="hasUnsavedNotes(badge.percentage)"
+                                        [class.text-grey-500]="!hasUnsavedNotes(badge.percentage)">{{isUnlock(badge.percentage)}}</a>
                                     </div>
                                 </div>
                             </div>
                         </div>  
                     </div>
                 </div>
-
                 <div class="tab-pane fade" id="navtabs3">
                     <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-4">
                         <div class="card-body mb-3 pb-0"><h2 class="fw-400 font-lg d-block"><b>Group</b> <a href="#" class="float-right"><i class="feather-edit text-grey-500 font-xs"></i></a></h2></div>
                         <div class="card-body pb-0">
                             <div class="row">
-                                <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let group of data.groups">
                                     <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
                                         <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
                                         <a href="#" class="btn-round-xxxl rounded-lg bg-lightblue ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1">
+                                            <img src={{group.picture}} alt="icon" class="p-1">
                                         </a>
-                                        <h4 class="fw-700 font-xs mt-4">Mobile Product Design</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome.</p>
+                                        <h4 class="fw-700 font-xs mt-4">{{group.title}}</h4>
+                                        <p class="fw-500 font-xssss text-grey-500 mt-3">{{group.explaination}}.</p>
                                         <div class="clearfix"></div>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-1 mr-1">Full Time</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 bg-lightblue d-inline-block text-grey-800 mb-1 mr-1">Desiner</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-info d-inline-block text-info mb-1">30 Min</span>
+                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-1 mr-1">{{group.typeTime}}</span>
+                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 bg-lightblue d-inline-block text-grey-800 mb-1 mr-1">{{group.typeWork}}</span>
+                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-info d-inline-block text-info mb-1">{{group.averageCompleteTime}} Min</span>
                                         <div class="clearfix"></div>
                                         <ul class="memberlist mt-4 mb-2">
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3">+2</a></li>
+                                            <li *ngFor="let student of group.applyStudents.slice(0, 4)"><a href=''><img src={{student.picture}} alt="user" class="w25 d-inline-block" style="border-radius: 50%; border: solid white;"></a></li>
+                                            <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3">{{group.applyStudents.length - 4}}</a></li>
                                             <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                        </ul>
-                                        
+                                        </ul>   
                                         <a href="#" class="p-2 mt-4 d-inline-block text-white fw-700 lh-30 rounded-lg w200 text-center font-xsssss ls-3 bg-current">APPLY NOW</a>
                                     </div>
                                 </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg alert-danger ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-2">
-                                        </a>
-                                        <h4 class="fw-700 font-xs mt-4">HTML Developer</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome.</p>
-                                        <div class="clearfix"></div>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-1 mr-1">Full Time</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 bg-lightblue d-inline-block text-grey-800 mb-1 mr-1">Desiner</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-info d-inline-block text-info mb-1">30 Min</span>
-                                        <div class="clearfix"></div>
-                                        <ul class="memberlist mt-4 mb-2">
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3">+2</a></li>
-                                            <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                        </ul>
-                                        
-                                        <a href="#" class="p-2 mt-4 d-inline-block text-white fw-700 lh-30 rounded-lg w200 text-center font-xsssss ls-3 bg-current">APPLY NOW</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg alert-secondary ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xs mt-4">Advanced CSS and Sass</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome.</p>
-                                        <div class="clearfix"></div>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-1 mr-1">Full Time</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 bg-lightblue d-inline-block text-grey-800 mb-1 mr-1">Desiner</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-info d-inline-block text-info mb-1">30 Min</span>
-                                        <div class="clearfix"></div>
-                                        <ul class="memberlist mt-4 mb-2">
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3">+2</a></li>
-                                            <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                        </ul>
-                                        
-                                        <a href="#" class="p-2 mt-4 d-inline-block text-white fw-700 lh-30 rounded-lg w200 text-center font-xsssss ls-3 bg-current">APPLY NOW</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg bg-lightblue ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xs mt-4">Modern React with Redux</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome.</p>
-                                        <div class="clearfix"></div>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-1 mr-1">Full Time</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 bg-lightblue d-inline-block text-grey-800 mb-1 mr-1">Desiner</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-info d-inline-block text-info mb-1">30 Min</span>
-                                        <div class="clearfix"></div>
-                                        <ul class="memberlist mt-4 mb-2">
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3">+2</a></li>
-                                            <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                        </ul>
-                                        
-                                        <a href="#" class="p-2 mt-4 d-inline-block text-white fw-700 lh-30 rounded-lg w200 text-center font-xsssss ls-3 bg-current">APPLY NOW</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg bg-lightblue ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xs mt-4">Node JS</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome.</p>
-                                        <div class="clearfix"></div>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-1 mr-1">Full Time</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 bg-lightblue d-inline-block text-grey-800 mb-1 mr-1">Desiner</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-info d-inline-block text-info mb-1">30 Min</span>
-                                        <div class="clearfix"></div>
-                                        <ul class="memberlist mt-4 mb-2">
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3">+2</a></li>
-                                            <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                        </ul>
-                                        
-                                        <a href="#" class="p-2 mt-4 d-inline-block text-white fw-700 lh-30 rounded-lg w200 text-center font-xsssss ls-3 bg-current">APPLY NOW</a>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-lg-6 col-md-6">
-                                    <div class="card mb-4 d-block w-100 shadow-xss rounded-lg p-xxl-5 p-4 border-0 text-center">
-                                        <a href="#" class="position-absolute right-0 mr-4 top-0 mt-3"><i class="ti-more text-grey-500 font-xs"></i></a>
-                                        <a href="#" class="btn-round-xxxl rounded-lg bg-lightblue ml-auto mr-auto">
-                                            <img src="https://via.placeholder.com/50x50.png" alt="icon" class="p-1 w-100">
-                                        </a>
-                                        <h4 class="fw-700 font-xs mt-4">Mobile Product Design</h4>
-                                        <p class="fw-500 font-xssss text-grey-500 mt-3">Learn new secrets to creating awesome.</p>
-                                        <div class="clearfix"></div>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-success d-inline-block text-success mb-1 mr-1">Full Time</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 bg-lightblue d-inline-block text-grey-800 mb-1 mr-1">Desiner</span>
-                                        <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-lg ls-2 alert-info d-inline-block text-info mb-1">30 Min</span>
-                                        <div class="clearfix"></div>
-                                        <ul class="memberlist mt-4 mb-2">
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li><a href="#"><img src="https://via.placeholder.com/30x30.png" alt="user" class="w30 d-inline-block"></a></li>
-                                            <li class="last-member"><a href="#" class="bg-greylight fw-600 text-grey-500 font-xssss ls-3">+2</a></li>
-                                            <li class="pl-4 w-auto"><a href="#" class="fw-500 text-grey-500 font-xssss">Student apply</a></li>
-                                        </ul>
-                                        
-                                        <a href="#" class="p-2 mt-4 d-inline-block text-white fw-700 lh-30 rounded-lg w200 text-center font-xsssss ls-3 bg-current">APPLY NOW</a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>  
+                            </div>  
+                        </div>
                     </div>
                 </div>
-
                 <div class="tab-pane fade" id="navtabs4">
                     <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden p-4">
                         <div class="card-body mb-3 pb-0"><h2 class="fw-400 font-lg d-block">My <b>Friend</b> <a href="#" class="float-right"><i class="feather-edit text-grey-500 font-xs"></i></a></h2></div>
                         <div class="card-body pb-0">
                             <div class="row">
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
+                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4" *ngFor="let friend of data.friends">
                                     <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
                                         <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
                                         <div class="card-body d-block w-100 pl-2 pr-2 text-center">
                                             <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
                                             <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Aliqa Macale </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
+                                            <h4 class="fw-700 font-xsss mt-3 mb-1">{{friend.firstname}} {{friend.lastname}} </h4>
+                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">{{friend.email}}</p>
                                             <div class="clearfix"></div>
                                             <ul class="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">John Steere </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <div class="clearfix"></div>
-                                            <ul class="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Mohannad Zitoun </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <div class="clearfix"></div>
-                                            <ul class="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Stephen Grider </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <div class="clearfix"></div>
-                                            <ul class="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Hendrix Stamp </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <div class="clearfix"></div>
-                                            <ul class="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Kimberley Kelly </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <div class="clearfix"></div>
-                                            <ul class="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Aliqa Macale </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <div class="clearfix"></div>
-                                            <ul class="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">John Steere </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <div class="clearfix"></div>
-                                            <ul class="text-center d-block mt-3 list-inline ml-2 mr-2 mb-3">
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
-                                                <li class="m-1 list-inline-item"><a href="#" class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
+                                                <li class="m-1 list-inline-item"><a href= {{friend.facebook}} class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
+                                                <li class="m-1 list-inline-item"><a href= {{friend.twitter}} class="btn-round-md bg-twiiter"><i class="font-xs ti-twitter-alt text-white"></i></a></li>
+                                                <li class="m-1 list-inline-item"><a href= {{friend.linkedin}} class="btn-round-md bg-linkedin"><i class="font-xs ti-linkedin text-white"></i></a></li>
+                                                <li class="m-1 list-inline-item"><a href= {{friend.instagram}} class="btn-round-md bg-instagram"><i class="font-xs ti-instagram text-white"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>                                            
@@ -647,133 +181,27 @@
                         <div class="card-body mb-3 pb-0"><h2 class="fw-400 font-lg d-block">Live<b> Channel</b> <a href="#" class="float-right"><i class="feather-edit text-grey-500 font-xs"></i></a></h2></div>
                         <div class="card-body pb-0">
                             <div class="row">
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
+                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4" *ngFor="let live of data.lives">
                                     <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
                                         <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
                                         <div class="card-body d-block w-100 pl-2 pr-2 text-center">
                                             <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
                                             <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Aliqa Macale </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <span class="live-tag mt-2 bg-dark p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">OFFLINE</span>
+                                            <h4 class="fw-700 font-xsss mt-3 mb-1">{{live.firstname}} {{live.lastname}} </h4>
+                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">{{live.email}}</p>
+                                            <span [ngClass]="(isOffline(live.status))?'live-tag mt-2 bg-danger p-2 z-index-1  rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3':'live-tag mt-2 bg-dark p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3'">{{live.status}}</span>
                                             <div class="clearfix"></div>
                                             <a href="#" class="mt-4 mb-4 p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
                                         </div>
                                     </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">John Steere </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <span class="live-tag mt-2 bg-danger p-2 z-index-1  rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
-                                            <div class="clearfix"></div>
-                                            <a href="#" class="mt-4 mb-4 p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Mohannad Zitoun </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <span class="live-tag mt-2 bg-dark p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">OFFLINE</span>
-                                            <div class="clearfix"></div>
-                                            <a href="#" class="mt-4 mb-4 p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Stephen Grider </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <span class="live-tag mt-2 bg-danger p-2 z-index-1  rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
-                                            <div class="clearfix"></div>
-                                            <a href="#" class="mt-4 mb-4 p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(images/blog-2.jpg);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Hendrix Stamp </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <span class="live-tag mt-2 bg-danger p-2 z-index-1  rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
-                                            <div class="clearfix"></div>
-                                            <a href="#" class="mt-4 mb-4 p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Kimberley Kelly </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <span class="live-tag mt-2 bg-danger p-2 z-index-1  rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
-                                            <div class="clearfix"></div>
-                                            <a href="#" class="mt-4 mb-4 p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">Aliqa Macale </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <span class="live-tag mt-2 bg-dark p-2 z-index-1 rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">OFFLINE</span>
-                                            <div class="clearfix"></div>
-                                            <a href="#" class="mt-4 mb-4 p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
-                                        </div>
-                                    </div>                                            
-                                </div>
-
-                                <div class="col-xxxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
-                                    <div class="card d-block w-100 border-0 shadow-xss rounded-lg overflow-hidden mb-4">
-                                        <div class="card-body position-relative h100 bg-gradiant-bottom bg-image-cover bg-image-center" style="background-image: url(https://via.placeholder.com/200x100.png);"></div>
-                                        <div class="card-body d-block w-100 pl-2 pr-2 text-center">
-                                            <figure class="avatar ml-auto mr-auto mb-0 mt--6 position-relative w75 z-index-1"><img src="https://via.placeholder.com/100x100.png" alt="image" class="float-right p-1 bg-white rounded-circle w-100"></figure>
-                                            <div class="clearfix"></div>
-                                            <h4 class="fw-700 font-xsss mt-3 mb-1">John Steere </h4>
-                                            <p class="fw-500 font-xsssss text-grey-500 mt-0 mb-2">support@gmail.com</p>
-                                            <span class="live-tag mt-2 bg-danger p-2 z-index-1  rounded-lg text-white font-xsssss text-uppersace fw-700 ls-3">LIVE</span>
-                                            <div class="clearfix"></div>
-                                            <a href="#" class="mt-4 mb-4 p-0 btn p-2 lh-24 w100 ml-1 ls-3 d-inline-block rounded-xl bg-current font-xsssss fw-700 ls-lg text-white">FOLLOW</a>
-                                        </div>
-                                    </div>                                            
-                                </div>
+                                </div>    
                             </div>
                         </div>  
                     </div>
                 </div>
-
-                 
             </div>
         </div>
+
         <div class="middle-sidebar-right scroll-bar">
             <div class="middle-sidebar-right-content">
 
@@ -833,4 +261,4 @@
         <button class="btn btn-circle text-white btn-neutral sidebar-right">
             <i class="ti-angle-left"></i>  
         </button>
-    </div> 
+</div> 
