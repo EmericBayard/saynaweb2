@@ -28,6 +28,6 @@ import { IonicModule } from '@ionic/angular';
     CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [],
-  bootstrap: [AppComponent, NavigationComponent, MiddleSidebarHeaderComponent, FooterComponent, HeaderSearchComponent]
+  bootstrap: [AppComponent, NavigationComponent, MiddleSidebarHeaderComponent, FooterComponent, HeaderSearchComponent, DefaultUserProfileComponent]
 })
 export class AppModule { }
